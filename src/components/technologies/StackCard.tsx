@@ -1,11 +1,12 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { ITechType } from "../type/techType"
+import { Bounce, toast } from "react-toastify";
 
 export interface StackCardProps {
     technology: ITechType;
     addedStack: ITechType[];
     setAddedStack: Dispatch<SetStateAction<ITechType[]>>
-    
+
 }
 
 export default function StackCard({ technology, addedStack, setAddedStack }: StackCardProps) {
@@ -14,6 +15,20 @@ export default function StackCard({ technology, addedStack, setAddedStack }: Sta
 
         const newStack = addedStack.filter((tech) => tech.id != technology.id);
         setAddedStack(newStack);
+
+        toast.warn(`${technology.name} is Removed from Stack`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+        });
+
+
     }
 
 
@@ -27,8 +42,8 @@ export default function StackCard({ technology, addedStack, setAddedStack }: Sta
                             <img className="w-8 h-8" src={technology.icon} alt="" />
                         </div>
                         <div>
-                            <h2 className="text-sm font-semibold">{technology.name}</h2>
-                            <span className="text-[14px]">{technology.category}</span>
+                            <h2 className="text-[16px] font-semibold">{technology.name}</h2>
+                            <span className="text-gray-500 text-[14px]">{technology.category}</span>
                         </div>
                     </div>
                     <div className="card-actions justify-end">

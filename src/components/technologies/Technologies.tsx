@@ -15,17 +15,17 @@ export default function Technologies({ techDataPromise }: TechnologiesProps) {
 
     return (
         <>
-            <div className="container mx-auto py-10 grid grid-cols-1 gap-5">
+            <div className="container mx-auto py-20 px-5 grid grid-cols-1 gap-5">
                 {/* Header: Explore Technology */}
-                <div>
-                    <h2>Explore the Technologies</h2>
-                    <p>Pick one technology per category to build your ideal stack.</p>
+                <div className="flex flex-col gap-5">
+                    <h2 className="text-center lg:text-start text-4xl lg:text-5xl font-bold">Explore the <span className="bg-linear-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">Technologies</span></h2>
+                    <p className="text-center lg:text-start text-[20px] lg:text-[25px] text-gray-500">Pick one technology per category to build your ideal stack.</p>
                 </div>
 
                 {/* Dynamic Grid */}
-                <div className="grid grid-cols-4 justify-between gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between gap-5">
                     {/* Grid: Categories */}
-                    <div className="col-span-3 ...">
+                    <div className="col-span-3">
                         <TechnologyGrid
                             technologies={technologies}
                             addedStack={addedStack}
@@ -35,7 +35,7 @@ export default function Technologies({ techDataPromise }: TechnologiesProps) {
                     </div>
 
                     {/* Your Stack: Sidebar */}
-                    <div className="col-span-1 ...">
+                    <div className="col-span-1">
                         <StackGrid
                             addedStack={addedStack}
                             setAddedStack={setAddedStack}

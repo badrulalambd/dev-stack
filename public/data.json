@@ -10,6 +10,16 @@
     "badge": "Popular"
   },
   {
+    "id": "javascript",
+    "name": "JavaScript",
+    "category": "Language",
+    "description": "The core programming language of the web for creating dynamic and interactive applications.",
+    "icon": "https://icon.icepanel.io/Technology/svg/JavaScript.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Essential"
+  },
+  {
     "id": "nextjs",
     "name": "Next.js",
     "category": "Frontend",
@@ -18,6 +28,16 @@
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Full-Stack"
+  },
+  {
+    "id": "tailwindcss",
+    "name": "Tailwind CSS",
+    "category": "Styling",
+    "description": "A utility-first CSS framework for rapidly building custom and responsive user interfaces.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg",
+    "rating": 4.8,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Modern"
   },
   {
     "id": "vue",
@@ -30,6 +50,16 @@
     "badge": "Flexible"
   },
   {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "Backend",
+    "description": "A JavaScript runtime that enables developers to build fast and scalable server-side applications.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Node.js.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Popular"
+  },
+  {
     "id": "angular",
     "name": "Angular",
     "category": "Frontend",
@@ -40,16 +70,6 @@
     "badge": "Enterprise"
   },
   {
-    "id": "javascript",
-    "name": "JavaScript",
-    "category": "Language",
-    "description": "The core programming language of the web for creating dynamic and interactive applications.",
-    "icon": "https://icon.icepanel.io/Technology/svg/JavaScript.svg",
-    "rating": 4.9,
-    "difficulty": "Beginner-Friendly",
-    "badge": "Essential"
-  },
-  {
     "id": "typescript",
     "name": "TypeScript",
     "category": "Language",
@@ -58,16 +78,6 @@
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Essential"
-  },
-  {
-    "id": "nodejs",
-    "name": "Node.js",
-    "category": "Backend",
-    "description": "A JavaScript runtime that enables developers to build fast and scalable server-side applications.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Node.js.svg",
-    "rating": 4.8,
-    "difficulty": "Intermediate",
-    "badge": "Popular"
   },
   {
     "id": "express",
@@ -148,16 +158,6 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Essential"
-  },
-  {
-    "id": "tailwindcss",
-    "name": "Tailwind CSS",
-    "category": "Styling",
-    "description": "A utility-first CSS framework for rapidly building custom and responsive user interfaces.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg",
-    "rating": 4.8,
-    "difficulty": "Beginner-Friendly",
-    "badge": "Modern"
   },
   {
     "id": "sass",

@@ -6,6 +6,7 @@ import type { ITechType } from './components/type/techType'
 import Banner from './components/banner/Banner';
 import Technologies from './components/technologies/Technologies';
 import Footer from './components/footer/Footer';
+import { ToastContainer } from 'react-toastify';
 
 const techDataFetch = async (): Promise<ITechType[]> => {
   const res = await fetch('./data.json');
@@ -27,6 +28,7 @@ function App() {
           <Technologies techDataPromise={techDataPromise} />
         </Suspense>
         <Footer />
+        <ToastContainer />
 
       </div>
     </>
