@@ -2,7 +2,7 @@
 
 A modern, responsive React application that helps developers explore popular web technologies and build a personalized technology stack. Users can browse technologies, view their details, and add or remove technologies from their stack.
 
-## Technologies Used
+## Technologies Used in the Project
 
 - React
 - TypeScript
@@ -13,11 +13,11 @@ A modern, responsive React application that helps developers explore popular web
 - JSON
 - Vite
 
-## Features
+## Features of the Project
 
-•	Explore Modern Technologies:  Discover a curated collection of popular technologies, frameworks, languages, databases, and developer tools with essential details and difficulty levels.
-•	Build a Personalized Tech Stack:  Select and organize technologies into a personal stack, with the ability to add or remove items dynamically.
-•	Responsive & Interactive Experience:  Enjoy a clean, modern interface designed for different screen sizes, with interactive cards, dynamic styling, and real-time feedback.
+- **Explore Modern Technologies:**  Discover a curated collection of popular technologies, frameworks, languages, databases, and developer tools with essential details and difficulty levels.
+- **Build a Personalized Tech Stack:**  Select and organize technologies into a personal stack, with the ability to add or remove items dynamically.
+- **Responsive & Interactive Experience:**  Enjoy a clean, modern interface designed for different screen sizes, with interactive cards, dynamic styling, and real-time feedback.
 
 ## What is JSX, and why is it used in React?
 
@@ -34,15 +34,17 @@ For example, this project receives technology information through props and mana
 useState allows a React component to store and update data.
 
 In this project, I used it to manage the technologies added to the user's stack:
-
-const [addedStack, setAddedStack] = useState<ITechType[]>([]);
+```
+const [addedStack, setAddedStack] = useState<ITechType[]>([]);```
 
 When a technology is added or removed, setAddedStack updates the state, and React re-renders the UI.
 
 ## What does the useEffect hook do, and why did you need it to load the JSON data?
 
 useEffect lets us run side effects after a component renders, such as fetching data from an API or JSON file.
+
 We need useEffect to load JSON data because the JSON file is fetched asynchronously after the component renders.
+
 useEffect is used to perform side effects such as fetching data.
 
 ## Why does every item in a .map() list need a unique key prop?
@@ -61,7 +63,10 @@ Conditional rendering means displaying different UI depending on a condition.
 
 For example, the stack displays an empty message when there are no technologies:
 ```
-{addedStack.length === 0 ? ( <p>Your stack is empty.</p> ) : ( <StackGrid technologies={addedStack} /> )}
+{addedStack.length === 0 ?
+( <p>Your stack is empty.</p> ) : 
+( <StackGrid technologies={addedStack} /> )
+}
 ```
 So, if the stack is empty, the user sees a message. Otherwise, the selected technologies are displayed.
 
@@ -77,7 +82,8 @@ Example:
 The child can send information back by receiving a callback function from the parent as a prop.
 
 For example:
-```<TechnologyCard
+```
+<TechnologyCard
     technology={technology}
     setAddedStack={setAddedStack}
 />
