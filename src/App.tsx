@@ -5,6 +5,7 @@ import NavBar from './components/navbar/NavBar'
 import type { ITechType } from './components/type/techType'
 import Banner from './components/banner/Banner';
 import Technologies from './components/technologies/Technologies';
+import Footer from './components/footer/Footer';
 
 const techDataFetch = async (): Promise<ITechType[]> => {
   const res = await fetch('./data.json');
@@ -25,6 +26,7 @@ function App() {
         <Suspense fallback={<h2>Loading Tech Data...</h2>}>
           <Technologies techDataPromise={techDataPromise} />
         </Suspense>
+        <Footer />
 
       </div>
     </>

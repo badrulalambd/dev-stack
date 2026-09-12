@@ -9,8 +9,8 @@ export default function NavBar() {
 
     return (
         <>
-            <div className="fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-999">
-                <header className="container mx-auto flex justify-between items-center gap-5 p-5">
+            <header className="fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-999">
+                <div className="container mx-auto flex justify-between items-center gap-5 p-5">
                     <div className="lg:hidden ">
                         <img src={hamburger} alt="Hamburger" />
                     </div>
@@ -37,8 +37,8 @@ export default function NavBar() {
                         <button className="btn-ghost text-gray-500 font-semibold cursor-pointer">Sign In</button>
                         <button className="btn btn-secondary rounded-4xl px-6 py-2 text-white font-semibold cursor-pointer">Sign Up</button>
                     </div>
-                </header>
-            </div>
+                </div>
+            </header>
         </>
     )
 }

@@ -1,7 +1,5 @@
 import { use, useState } from "react"
 import type { ITechType } from "../type/techType"
-import TechnologyCard from "./TechnologyCard";
-import StackCard from "./StackCard";
 import StackGrid from "./StackGrid";
 import TechnologyGrid from "./TechnologyGrid";
 

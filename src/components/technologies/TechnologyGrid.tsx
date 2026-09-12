@@ -15,7 +15,7 @@ const TechnologyGrid = ({ technologies, addedStack, setAddedStack }: TechnologyG
         <>
             <div className="grid grid-cols-3 gap-2">
                 {
-                    technologies.map((technology: ITechType, indx: number) => {
+                    technologies.map((technology: ITechType) => {
                         return (
                             <TechnologyCard
                                 key={technology.id}
