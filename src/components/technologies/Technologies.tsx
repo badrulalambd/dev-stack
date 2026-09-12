@@ -17,9 +17,9 @@ export default function Technologies({ techDataPromise }: TechnologiesProps) {
         <>
             <div className="container mx-auto py-20 px-5 grid grid-cols-1 gap-5">
                 {/* Header: Explore Technology */}
-                <div className="flex flex-col gap-5">
-                    <h2 className="text-center lg:text-start text-4xl lg:text-5xl font-bold">Explore the <span className="bg-linear-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">Technologies</span></h2>
-                    <p className="text-center lg:text-start text-[20px] lg:text-[25px] text-gray-500">Pick one technology per category to build your ideal stack.</p>
+                <div className="flex flex-col gap-3">
+                    <h2 className="text-center lg:text-start text-2xl lg:text-5xl font-bold">Explore the <span className="bg-linear-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">Technologies</span></h2>
+                    <p className="text-center lg:text-start text-[18px] lg:text-[25px] text-gray-500">Pick one technology per category to build your ideal stack.</p>
                 </div>
 
                 {/* Dynamic Grid */}
