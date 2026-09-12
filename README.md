@@ -35,7 +35,8 @@ useState allows a React component to store and update data.
 
 In this project, I used it to manage the technologies added to the user's stack:
 ```
-const [addedStack, setAddedStack] = useState<ITechType[]>([]);```
+const [addedStack, setAddedStack] = useState<ITechType[]>([]);
+```
 
 When a technology is added or removed, setAddedStack updates the state, and React re-renders the UI.
 
