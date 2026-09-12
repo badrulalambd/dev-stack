@@ -1,32 +1,20 @@
-# React + TypeScript + Vite
+# Technology Explorer Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive React application that helps developers explore popular web technologies and build a personalized technology stack. Users can browse technologies, view their details, and add or remove technologies from their stack.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- TypeScript
+- Tailwind CSS
+- DaisyUI
+- React Icons
+- React Toastify
+- JSON
+- Vite
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+•	Explore Modern Technologies:  Discover a curated collection of popular technologies, frameworks, languages, databases, and developer tools with essential details and difficulty levels.
+•	Build a Personalized Tech Stack:  Select and organize technologies into a personal stack, with the ability to add or remove items dynamically.
+•	Responsive & Interactive Experience:  Enjoy a clean, modern interface designed for different screen sizes, with interactive cards, dynamic styling, and real-time feedback.
