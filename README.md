@@ -21,28 +21,123 @@ A modern, responsive React application that helps developers explore popular web
 - **Build a Personalized Tech Stack:**  Select and organize technologies into a personal stack, with the ability to add or remove items dynamically.
 - **Responsive & Interactive Experience:**  Enjoy a clean, modern interface designed for different screen sizes, with interactive cards, dynamic styling, and real-time feedback.
 
-## What is JSX, and why is it used in React?
+# Answer of the important React questions
 
-JSX is a syntax that allows us to write HTML-like code inside JavaScript or TypeScript. React uses JSX to make it easier to describe what the UI should look like.
+## i. What is JSX, and why is it used in React?
 
-## What is the difference between props and state?
+JSX is a syntax that allows us to write HTML-like code inside JavaScript or TypeScript. 
+
+React uses JSX to make it easier to describe what the UI should look like.
+
+## ii. What is the difference between props and state?
 
 Props are data passed from a parent component to a child component.
+
 State is data managed inside a component that can change over time and update the UI.
+
 For example, this project receives technology information through props and manages the user’s selected stack using state.
 
-## What does the useState hook do, and where did you use it in this project?
+Example code from my project:
+```
+export default function Technologies({ techDataPromise }: TechnologiesProps) {
 
-useState allows a React component to store and update data.
+    const technologies = use(techDataPromise);
 
-In this project, I used it to manage the technologies added to the user's stack:
+    const [addedStack, setAddedStack] = useState<ITechType[]>([]);
+
+    return (
+        <>
+            <div className="container mx-auto py-20 px-5 grid grid-cols-1 gap-5">
+                {/* Header: Explore Technology */}
+                <div className="flex flex-col gap-3">
+                    <h2 className="text-center lg:text-start text-2xl lg:text-5xl font-bold">Explore the <span className="bg-linear-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">Technologies</span></h2>
+                    <p className="text-center lg:text-start text-[18px] lg:text-[25px] text-gray-500">Pick one technology per category to build your ideal stack.</p>
+                </div>
+
+                {/* Dynamic Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between gap-5">
+                    {/* Grid: Categories */}
+                    <div className="col-span-3">
+                        <TechnologyGrid
+                            technologies={technologies}
+                            addedStack={addedStack}
+                            setAddedStack={setAddedStack}
+                        />
+                    </div>
+
+                    {/* Your Stack: Sidebar */}
+                    <div className="col-span-1">
+                        <StackGrid
+                            addedStack={addedStack}
+                            setAddedStack={setAddedStack}
+                        />
+                    </div>
+
+                </div>
+            </div>
+        </>
+    )
+}
+```
+In the code above, addedStack is a state variable. 
+
+technologies, addedStack, and setAddedStack are sent to the TechnologyGrid component as props
+
+## iii. What does the useState hook do, and where did you use it in this project?
+
+The useState hook lets a React component store and update data.
+
+In this project, I used it in the Technologies component to manage the technologies added to the user's stack.
 ```
 const [addedStack, setAddedStack] = useState<ITechType[]>([]);
 ```
 
 When a technology is added or removed, setAddedStack updates the state, and React re-renders the UI.
 
-## What does the useEffect hook do, and why did you need it to load the JSON data?
+Below is the full code of the Technologies component where I used the useState hook:
+```
+export default function Technologies({ techDataPromise }: TechnologiesProps) {
+
+    const technologies = use(techDataPromise);
+
+    const [addedStack, setAddedStack] = useState<ITechType[]>([]);
+
+    return (
+        <>
+            <div className="container mx-auto py-20 px-5 grid grid-cols-1 gap-5">
+                {/* Header: Explore Technology */}
+                <div className="flex flex-col gap-3">
+                    <h2 className="text-center lg:text-start text-2xl lg:text-5xl font-bold">Explore the <span className="bg-linear-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">Technologies</span></h2>
+                    <p className="text-center lg:text-start text-[18px] lg:text-[25px] text-gray-500">Pick one technology per category to build your ideal stack.</p>
+                </div>
+
+                {/* Dynamic Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between gap-5">
+                    {/* Grid: Categories */}
+                    <div className="col-span-3">
+                        <TechnologyGrid
+                            technologies={technologies}
+                            addedStack={addedStack}
+                            setAddedStack={setAddedStack}
+                        />
+                    </div>
+
+                    {/* Your Stack: Sidebar */}
+                    <div className="col-span-1">
+                        <StackGrid
+                            addedStack={addedStack}
+                            setAddedStack={setAddedStack}
+                        />
+                    </div>
+
+                </div>
+            </div>
+        </>
+    )
+}
+```
+
+## iv. What does the useEffect hook do, and why did you need it to load the JSON data?
 
 useEffect lets us run side effects after a component renders, such as fetching data from an API or JSON file.
 
@@ -50,7 +145,7 @@ We need useEffect to load JSON data because the JSON file is fetched asynchronou
 
 useEffect is used to perform side effects such as fetching data.
 
-## Why does every item in a .map() list need a unique key prop?
+## v. Why does every item in a .map() list need a unique key prop?
 
 React uses the key to identify each item in a list. It helps React understand which items were added, removed, or changed.
 
@@ -58,22 +153,38 @@ For example:
 ```
 {technologies.map(technology => ( <TechnologyCard key={technology.id} technology={technology} /> ))}
 ```
+In the above code, technology.id is passed as the key in the TechnologyCard component props.
+
 Using a unique ID is better than using the array index because the list can change.
 
-## What is conditional rendering? Show one place you used it (example: the empty stack message).
+## vi. What is conditional rendering? Show one place you used it (example: the empty stack message).
 
 Conditional rendering means displaying different UI depending on a condition.
 
 For example, the stack displays an empty message when there are no technologies:
 ```
-{addedStack.length === 0 ?
-( <p>Your stack is empty.</p> ) : 
-( <StackGrid technologies={addedStack} /> )
+{
+    addedStack.length == 0 ? (
+        <div className="border-gray-200 border border-dashed rounded-md p-2 m-2">
+            <h2 className="text-gray-500 text-center p-5">Your stack is empty.</h2>
+        </div>
+    ) :
+        addedStack.map((technology) => {
+            return (
+                <StackCard
+                    key={technology.id}
+                    technology={technology}
+                    addedStack={addedStack}
+                    setAddedStack={setAddedStack}
+
+                />
+            )
+        })
 }
 ```
 So, if the stack is empty, the user sees a message. Otherwise, the selected technologies are displayed.
 
-## How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+## vii. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
 A parent passes data to a child using props.
 
@@ -96,5 +207,5 @@ The child can then call setAddedStack() to update the parent's state.
 
 This allows the parent and child components to communicate while keeping the state in the appropriate component.
 
-
+This approach is called **`Lifting State Up`** because the state is moved (or "lifted") to the parent component so that both the parent and child can work with the same data while keeping the state in a centralized and appropriate location.
 
