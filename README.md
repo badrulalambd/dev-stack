@@ -6,7 +6,9 @@ A modern, responsive React application that helps developers explore popular web
 
 - React
 - TypeScript
+- HTML
 - Tailwind CSS
+- CSS
 - DaisyUI
 - React Icons
 - React Toastify
